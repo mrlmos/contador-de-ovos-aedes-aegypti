@@ -2,7 +2,7 @@ import numpy as np
 from DensityEstimation import kernel_density_estimation
 
 
-def temOvo(base, x_train_c1, x_train_c2, image) -> bool:
+def temOvo(base: np.ndarray, x_train_c1, x_train_c2, image) -> bool:
     """
     INPUTS:
 

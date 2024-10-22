@@ -4,12 +4,26 @@ import matplotlib.pyplot as plt
 from icecream import ic
 
 
-def gaussian(x):
+def gaussian(x: np.ndarray) -> float:
+    """
+    Kernel Gaussiano de covariância unitária
+    """
     dim = x.shape[0]
     return (1 / ((2 * np.pi) ** (dim / 2))) * np.exp(-0.5 * np.dot(x.T, x))
 
 
-def kernel_density_estimation(data, points, h):
+def kernel_density_estimation(data: np.ndarray, points, h: float):
+    """
+    Estima o valor da densidade de probabilidade condicional num valor "points" dado um conjunto de treino
+
+    INPUTS:
+    data - dados de treinamento usados para estimar a densidade de probabilidade
+    points - valor(es) onde a densidade de probabilidade encontrada será avaliada
+    h - tamanho do janelamento do kernel
+
+    OUTPUT:
+    den - valor(es) de densidade avaliada(s) no(s) ponto(s)
+    """
     dim, n_samples = data.shape
     assert (
         dim == points.shape[0]

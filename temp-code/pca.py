@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 
-def PCA(imagens, ndims: int, save_base: bool = False):
+def PCA(imagens, ndims: int, save_base: bool = False) -> (np.ndarray, np.ndarray):
     """
     Projeta as imagens na direção de suas primeiras componentes principais
 
